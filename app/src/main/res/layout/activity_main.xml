@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:text="Select 22 Players"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_14ssp" />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160sdp"
+        android:layout_below="@+id/app"
+        android:orientation="vertical"
+        android:padding="@dimen/_5sdp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/team1_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/team1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/team1_logo"
+                android:text="Team 1"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/team2_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/team2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/team2_logo"
+                android:text="Team 2"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/vslogo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Wankhade Stadium, Mumbai"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+        <com.willy.ratingbar.ScaleRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_30sdp"
+            app:srb_numStars="11"
+            android:layout_gravity="center_horizontal|center_vertical"
+            app:srb_drawableEmpty="@drawable/ic_empty"
+            app:srb_drawableFilled="@drawable/ic_filled"
+            app:srb_rating="0"
+            app:srb_starWidth="@dimen/_15sdp"
+            app:srb_starPadding="0dp"
+            app:srb_starHeight="@dimen/_15sdp"
+            app:srb_isIndicator="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linear"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/wk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/atma"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Wicket-Keeper" />
+
+            <TextView
+                android:id="@id/batsman"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:fontFamily="@font/atma"
+                android:gravity="center"
+                android:text="Batsman" />
+
+            <TextView
+                android:id="@+id/all_rounders"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/atma"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="All-Rounder" />
+
+            <TextView
+                android:id="@+id/bowlers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:fontFamily="@font/atma"
+                android:gravity="center"
+                android:text="Bowler" />
+        </LinearLayout>
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inAnimation="@anim/right_left"
+            android:outAnimation="@anim/left_right">
+
+            <include
+                android:id="@+id/wk_layout"
+                layout="@layout/layout_wk" />
+
+            <include
+                android:id="@+id/batsman"
+                layout="@layout/layout_batsman" />
+
+            <include
+                android:id="@+id/all_rounder"
+                layout="@layout/layout_all_rounder" />
+
+            <include
+                android:id="@+id/bowler"
+                layout="@layout/layout_bowler" />
+        </ViewFlipper>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/button"
+        android:padding="@dimen/_5sdp"
+        android:text="Team Preview"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+</RelativeLayout>
